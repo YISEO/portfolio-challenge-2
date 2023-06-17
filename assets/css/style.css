@@ -3,19 +3,21 @@
 }
 
 /* brand color palette */
+/* I added my dark & point gold color */
 :root {
   --primary: rgba(68, 88, 119, 1);
   --secondary: rgba(146, 204, 206, 1);
-  --tertiary: rgba(49, 52, 61, 1);
-  --dark: rgba(28, 29, 33, 1);
   --light: rgba(238, 238, 247, 1);
+  --dark: #2e2e31;
+  --black: #000;
+  --point-gold: #e8c193;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: var(--primary);
+  font-family: 'Nunito Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: var(--dark);
   background-color: var(--light);
   line-height: 1.5;
 }
@@ -33,52 +35,91 @@ p {
   margin: 0;
 }
 
-header {
-  padding: 15px 6% 15px 0;
+/* main logo and nav section - added my logo image & nav effect changed*/
+.header {
+  position: absolute;
+  padding: 15px 3% 15px 1%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  background-color: var(--tertiary);
-  box-shadow: 0 5px 35px rgba(146, 204, 206, 0.4);
+  width: 100%;
 }
 
-header h1 {
-  color: var(--tertiary);
-  background-color: var(--secondary);
-  padding: 5px 1% 5px 6%;
-  margin: 0;
-  font-size: 4vw;
-  line-height: 1;
+.header .main-logo {
+  height: 100%;
 }
 
-nav {
+.header .main-logo img {
+  display: block;
+}
+
+.navigation {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-nav a {
+.navigation a {
   text-decoration: none;
   padding: 5px 10px;
-  color: var(--secondary);
+  color: var(--point-gold);
   margin-right: 10px;
-  background-image: linear-gradient(270deg, var(--secondary) 0%, var(--secondary) 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: bottom;
   transition: all 0.25s ease-in;
   font-size: 1.4rem;
 }
 
-nav a:hover {
-  background-size: 100% 100%;
-  color: var(--primary);
+.navigation a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #e8c193;
+  transition: all 0.4s ease-in-out;
 }
 
-nav a:last-child {
+.navigation a:hover::after {
+ width: 100%;
+}
+
+.navigation a:last-child {
   margin-right: 0;
+}
+
+/* main banner section */
+.main-banner {
+  background-color: var(--dark);
+  background-image: url("../images/banner-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
+  min-height: 30vh;
+  height: 100vh;
+  color: var(--light);
+  padding: 2% 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.banner-box h2 {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.banner-box .banner-text {
+  margin-top: 2%;
+  font-size: 1.2rem;
 }
 
 main {
@@ -86,35 +127,7 @@ main {
   margin-bottom: 45px;
 }
 
-.hero-banner {
-  background: rgb(68, 88, 120);
-  background-image: url("../images/02-hero-bg.jpg"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: soft-light;
-  min-height: 30vh;
-  color: var(--light);
-  padding: 2% 6%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  text-align: right;
-}
-
-.hero-banner div {
-  flex: 0 0 90%;
-}
-
-.hero-banner h2 {
-  background-color: var(--secondary);
-  color: var(--tertiary);
-  margin: 0;
-  padding: 5px 10px;
-  font-size: 2.3rem;
-  line-height: 1.2;
-  display: inline;
-}
-
+/* page common section */
 .page-wrapper {
   max-width: 88%;
   margin-left: auto;
@@ -125,17 +138,16 @@ main {
   margin: 25px 0;
   padding: 10px 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
 }
 
 .page-section > h2 {
+  margin-bottom: 2%;
   flex: 0 0 20%;
-  text-align: right;
   padding-right: 15px;
-  border-right: 4px solid var(--primary);
   font-size: 4vw;
   line-height: 1.1;
 }
@@ -157,7 +169,7 @@ main {
 .flex-item {
   border: 5px solid var(--secondary);
   background-color: var(--primary);
-  color: var(--tertiary);
+  color: var(--black);
   min-height: 150px;
   max-height: 150px;
   flex-basis: calc(50% - 1em);
@@ -200,12 +212,12 @@ main {
 }
 
 .contact address a {
-  color: var(--tertiary);
+  color: var(--dark);
   padding: 5px;
   text-decoration: none;
   font-size: 1.3rem;
   font-style: normal;
-  background-image: linear-gradient(270deg, var(--primary) 0%, var(--primary) 100%);
+  background-image: linear-gradient(0deg, var(--dark) 0%, var(--dark) 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: bottom;
@@ -216,7 +228,7 @@ main {
 
 .contact address a:hover {
   background-size: 100% 88%;
-  color: var(--secondary);
+  color: var(--point-gold);
 }
 
 /* portfolio project images */
@@ -266,8 +278,6 @@ main {
   }
 
   .page-section > h2 {
-    border-right: none;
-    border-bottom: 4px solid var(--primary);
     margin-bottom: 20px;
     padding-bottom: 10px;
     text-align: left;
