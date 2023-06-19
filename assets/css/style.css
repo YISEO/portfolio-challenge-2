@@ -67,7 +67,7 @@ p {
   color: var(--point-gold);
   margin-right: 10px;
   transition: all 0.25s ease-in;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .navigation a::after {
@@ -148,13 +148,13 @@ main {
   margin-bottom: 2%;
   flex: 0 0 20%;
   padding-right: 15px;
-  font-size: 4vw;
+  font-size: 2.5rem;
   line-height: 1.1;
 }
 
-.page-section > div {
+/* .page-section > div {
   flex: 0 0 77%;
-}
+} */
 
 .page-section p {
   margin-bottom: 20px;
@@ -182,6 +182,15 @@ main {
   background-size: 150%;
   transition: all 0.5s;
   font-size: 0.9rem;
+}
+
+/* about me */
+.aboutme-text {
+  max-width: 1000px;
+}
+
+.aboutme-text p {
+  font-size: 1.2rem;
 }
 
 /* feature first portfolio item */
