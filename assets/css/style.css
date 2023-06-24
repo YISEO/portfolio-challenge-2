@@ -2,11 +2,10 @@
   box-sizing: border-box;
 }
 
-/* brand color palette */
+/* common style and brand color palette */
 /* I added my dark & point gold color */
 :root {
-  --primary: rgba(68, 88, 119, 1);
-  /* --secondary: rgba(146, 204, 206, 1); */
+  --bgcolor: rgba(68, 88, 119, 1);
   --light: rgba(238, 238, 247, 1);
   --dark: #2e2e31;
   --black: #000;
@@ -39,7 +38,7 @@ p {
   margin: 0;
 }
 
-/* main logo and nav section - added my logo image & nav effect changed*/
+/* header - added my logo image & nav effect changed*/
 .header {
   position: absolute;
   padding: 15px 3% 15px 1%;
@@ -89,6 +88,7 @@ p {
 .navigation a:last-child {
   margin-right: 0;
 }
+/* !header */
 
 /* main banner section */
 .main-banner {
@@ -97,6 +97,7 @@ p {
   background-size: cover;
   background-position: center;
   background-blend-mode: soft-light;
+  width: 100%;
   min-height: 30vh;
   height: 100vh;
   color: var(--light);
@@ -129,6 +130,7 @@ main {
   margin-top: 20px;
   margin-bottom: 45px;
 }
+/* !main banner */
 
 /* page common section */
 .page-wrapper {
@@ -160,8 +162,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
 }
-
-
+/* !page common */
 
 /* about me */
 .aboutme-text {
@@ -175,10 +176,11 @@ main {
 .aboutme-text p:first-child {
   margin-bottom: 30px;
 }
+/* !about me */
 
-/* portfolio project images */
+/* my project - I don't have many projects so I put the placeholder image */
 .project-item {
-  background-color: var(--primary);
+  background-color: var(--bgcolor);
   color: var(--black);
   min-height: 200px;
   max-height: 200px;
@@ -221,24 +223,17 @@ main {
   background-image: url("../images/02-portfolio-prework.png");
 }
 
-.run-buddy {
-  background-image: url("../images/02-run-buddy.jpg");
+.todo-list,
+.clone-coding,
+.my-portfolio {
+  background-image: url("../images/02-portfolio-placeholder.png");
 }
-
-.react-calc {
-  background-image: url("../images/02-portfolio-2.jpg");
-}
-
-.pastel-puzzles {
-  background-image: url("../images/02-portfolio-3.jpg");
-}
-
+/* !my project */
 
 /* contact me */
 .contact-section address {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   align-items: center;
   height: 100%;
   font-style: normal;
@@ -268,11 +263,9 @@ main {
 .contact-section address a:hover::after {
   width: 100%;
 }
+/* !contact me */
 
-
-
-/* end portfolio project images */
-
+/* media query */
 @media screen and (max-width: 980px) {
   header {
     padding: 0 0 10px 0;
@@ -311,7 +304,7 @@ main {
   }
 
   .project-item:first-child {
-    min-height: 180px;
+    min-height: 220px;
   }
 
   .hero-banner {
@@ -324,3 +317,4 @@ main {
     align-items: flex-start;
   }
 }
+/* !media query */
